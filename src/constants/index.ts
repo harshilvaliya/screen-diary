@@ -59,7 +59,7 @@ export const footerLinks = [
 export const aboutUsData = {
   TeamCardData: [
     {
-      profile: "/Images/HarshilProfile.png",
+      profile: "/Images/linkpfp.jpg",
       fullname: "Harshil Valiya",
       position: "Team Member",
       email: "harshilvaliya40@gmail.com",
@@ -69,21 +69,21 @@ export const aboutUsData = {
     },
     {
       profile: "/Images/VishwangProfile.jpg",
-      fullname: "Arjun Latiwala",
+      fullname: "Vishwang Suthar",
       position: "Team Leader",
-      email: "arjunlatiwala@gmail.com",
-      git: "https://github.com/ArjunCJ",
-      linkedin: "https://www.linkedin.com/in/arjun-latiwala-344449243/",
-      insta: "https://www.instagram.com/aalu._.arjun/",
+      email: "vishwangsuthar.997@gmail.com",
+      git: "https://github.com/Vishwang0Suthar",
+      linkedin: "https://www.linkedin.com/in/vishwang-suthar-062b39233/",
+      insta: "https://www.instagram.com/vishwang._.suthar/",
     },
     {
       profile: "/Images/RaviProfile.jpeg",
       fullname: "Ravi Sanghani",
       position: "Team Member",
-      email: "khushi122004@gmail.com",
-      git: "https://github.com/4Victory",
-      linkedin: "https://www.linkedin.com/in/khushi-wala-738019284/",
-      insta: "https://www.instagram.com/violet_flame_4/",
+      email: "jasanghani126@gmail.com",
+      git: "",
+      linkedin: "https://www.linkedin.com/in/ravi-sanghani-662b30237/",
+      insta: "https://www.instagram.com/ravi_sanghani_1206/",
     },
   ],
 };

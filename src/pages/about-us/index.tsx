@@ -6,7 +6,10 @@ type Props = {};
 
 const About = (props: Props) => {
   return (
-    <div>
+    <div className="pt-24">
+      <div className="flex justify-center">
+        <p className="text-3xl font-bold">Team Details</p>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5 px-5 pb-5 ">
         {aboutUsData.TeamCardData.map((item, index) => {
           return (
