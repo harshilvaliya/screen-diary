@@ -1,4 +1,4 @@
-<div align="center" >
+<!-- <div align="center" >
   <br/>
   <br/>
   <img src="/public/logo-dark.png#gh-dark-mode-only" alt="logo" width="200" height="auto" />
@@ -153,4 +153,4 @@ To contribute code to movie app project:
 4. Run the automated tests to ensure that your changes do not break any existing functionality
 5. Open a pull request back to the main repository, including a description of your changes and any relevant issue numbers
 
-Thank you for your contribution to Movie app project! We appreciate your efforts to help make this a great movie application.
+Thank you for your contribution to Movie app project! We appreciate your efforts to help make this a great movie application. -->
