@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from "../../../public/noun-movies.png";
+import logo from "../../../public/favicon.png";
 import { cn } from "@/utils/helper";
 
 interface logoProps {

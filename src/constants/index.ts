@@ -44,7 +44,7 @@ export const footerLinks = [
   // "home",
   {
     title: "About us",
-    path: "/about-us",
+    path: "/about",
   },
   {
     title: "Movies",
@@ -61,24 +61,24 @@ export const aboutUsData = {
     {
       profile: "/Images/HarshilProfile.png",
       fullname: "Harshil Valiya",
-      position: "Team Leader",
+      position: "Team Member",
       email: "harshilvaliya40@gmail.com",
       git: "https://github.com/harshilvaliya",
       linkedin: "https://www.linkedin.com/in/harshil-valiya-1b1082274/",
       insta: "https://www.instagram.com/harshil_valiya/",
     },
     {
-      profile: "/Images/ArjunProfile.jpg",
+      profile: "/Images/VishwangProfile.jpg",
       fullname: "Arjun Latiwala",
-      position: "Team Member",
+      position: "Team Leader",
       email: "arjunlatiwala@gmail.com",
       git: "https://github.com/ArjunCJ",
       linkedin: "https://www.linkedin.com/in/arjun-latiwala-344449243/",
       insta: "https://www.instagram.com/aalu._.arjun/",
     },
     {
-      profile: "/Images/HeetProfile.jpg",
-      fullname: "Khushi Wala",
+      profile: "/Images/RaviProfile.jpeg",
+      fullname: "Ravi Sanghani",
       position: "Team Member",
       email: "khushi122004@gmail.com",
       git: "https://github.com/4Victory",
