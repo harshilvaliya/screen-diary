@@ -59,7 +59,7 @@ export const footerLinks = [
 export const aboutUsData = {
   TeamCardData: [
     {
-      profile: "/images/HarshilProfile.png",
+      profile: "/Images/HarshilProfile.png",
       fullname: "Harshil Valiya",
       position: "Team Leader",
       email: "harshilvaliya40@gmail.com",
@@ -68,7 +68,7 @@ export const aboutUsData = {
       insta: "https://www.instagram.com/harshil_valiya/",
     },
     {
-      profile: "/images/ArjunProfile.jpg",
+      profile: "/Images/ArjunProfile.jpg",
       fullname: "Arjun Latiwala",
       position: "Team Member",
       email: "arjunlatiwala@gmail.com",
@@ -77,7 +77,7 @@ export const aboutUsData = {
       insta: "https://www.instagram.com/aalu._.arjun/",
     },
     {
-      profile: "/images/KhushiProfile.jpg",
+      profile: "/Images/HeetProfile.jpg",
       fullname: "Khushi Wala",
       position: "Team Member",
       email: "khushi122004@gmail.com",
