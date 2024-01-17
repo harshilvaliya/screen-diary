@@ -13,6 +13,7 @@ import {
 import "react-loading-skeleton/dist/skeleton.css";
 import "swiper/css";
 import Login from "./pages/login";
+import Register from "./pages/login/register";
 
 const Catalog = lazy(() => import("./pages/Catalog"));
 const About = lazy(() => import("./pages/about-us"));
@@ -24,7 +25,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const App = () => {
   const navigate = useNavigate();
   const [isLoginPage, setIsLoginPage] = useState(false);
-
+const [user, setLoginUser] = useState({});
   useEffect(() => {
     setIsLoginPage(window.location.pathname === "/login");
   }, []);
@@ -47,6 +48,8 @@ const App = () => {
               <Route path="/:category" element={<Catalog />} />
               <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/login/register" element={<Register />} />
+
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

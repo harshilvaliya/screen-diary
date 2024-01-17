@@ -1,86 +1,128 @@
 import React, { useState } from "react";
-import "./login.module.css";
-import Image from "@/common/Image";
-import bg from "./pxfuel1.jpg";
+import { useNavigate } from "react-router-dom";
+// import "./login.css";
 
-const Login: React.FC = () => {
-  const [isSignIn, setIsSignIn] = useState<boolean>(false);
+import { FormEvent } from "react";
 
-  const handleSignInClick = () => {
-    setIsSignIn(true);
+const Index = ({ setLoginUser }) => {
+  const Navigate = useNavigate();
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (event: FormEvent) => {
+    const { name, value } = event.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
   };
 
-  const handleSignUpClick = () => {
-    setIsSignIn(false);
+  const login = async (event: FormEvent) => {
+    event.preventDefault();
+    const res = await fetch("http://localhost:5000/login", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data1 = await res.json();
+    alert(data1.message);
+    
+
+    if (data1.success) {
+      Navigate("/");
+    }
   };
 
   return (
-    <div className="container bg-transparent justify-center items-center flex h-screen w-full">
-      <Image
-        src={bg}
-        className="absolute h-full z-[-1] w-full object-cover"
-        alt="background"
-      />
-      <div className="form-box bg-white p-10 rounded-md">
-        <h1
-          id="title"
-          className="text-center text-2xl border-b-2 border-red-600 w-fit mx-auto py-1"
-        >
-          {isSignIn ? "Sign In" : "Sign Up"}
-        </h1>
-        <form>
-          <div className="input-group flex flex-col gap-6 px-6 py-10">
-            <div
-              className="input-field"
-              style={{ display: isSignIn ? "none" : "block" }}
-            >
-              <i className="fa-solid fa-user"></i>
-              <input
-                type="text"
-                className="outline-none border-2 focus:border-gray-700 p-2 rounded-lg"
-                placeholder="Name"
-              />
-            </div>
-            <div className="input-field">
-              <i className="fa-solid fa-envelope"></i>
-              <input
-                type="email"
-                className="outline-none border-2 focus:border-gray-700 p-2 rounded-lg"
-                placeholder="Email"
-              />
-            </div>
-            <div className="input-field">
-              <i className="fa-solid fa-lock"></i>
-              <input
-                type="password"
-                className="outline-none border-2 focus:border-gray-700 p-2 rounded-lg"
-                placeholder="Password"
-              />
-            </div>
-            <p>
-              Forgot Password? <a href="#">Click Here</a>
-            </p>
+    <section className="vh-100">
+      <div className="container-fluid h-custom">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-md-9 col-lg-6 col-xl-5">
+            <img
+              src="../../../public/Images/bgg.jpg"
+              className="img-fluid absolute"
+              alt="Sample"
+            />
           </div>
-          <div className="btn-fied flex gap-5 mx-auto w-fit">
-            <button
-              type="button"
-              onClick={handleSignUpClick}
-              className={!isSignIn ? "" : "disable"}
-            >
-              Sign Up
-            </button>
-            <button
-              type="button"
-              onClick={handleSignInClick}
-              className={isSignIn ? "" : "disable"}
-            >
-              Sign In
-            </button>
+        <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 relative justify-center flex items-center h-screen">
+            <form className="login bg-white bg-opacity-70 p-8 rounded-xl" onSubmit={login}>
+              {/* {console.log("User", user)} */}
+
+              <div className="form-outline mb-4">
+                <input
+                  className="form-control form-control-lg rounded-lg px-2 text-xl w-full"
+                  type="text"
+                  name="email"
+                  value={user.email}
+                  onChange={handleChange}
+                  placeholder="Enter your Email"
+                ></input>
+              </div>
+              <div className="form-outline mb-4">
+                <input
+                  className="form-control form-control-lg rounded-lg px-2 text-xl w-full"
+                  type="password"
+                  name="password"
+                  value={user.password}
+                  onChange={handleChange}
+                  placeholder="Enter your Password"
+                ></input>
+              </div>
+
+              {/* // Update password */}
+              <div className="d-flex justify-content-between align-items-center">
+                {/* <!-- Checkbox --> */}
+                <div className="form-check mb-0 px-1">
+                  <input
+                    className="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="form2Example3"
+                  />
+                  <label className="form-check-label text-sm" htmlFor="form2Example3">
+                    Remember me
+                  </label>
+                </div>
+                <a
+                  href="#!"
+                  onClick={() => {
+                    Navigate("/changePassword");
+                  }}
+                  className="text-sm text-blue-800"
+                >
+                  Forgot password?
+                </a>
+              </div>
+              <div className="text-center text-lg-start mt-4 pt-2">
+                <button
+                  style={{ padding: "0rem 2rem" }}
+                  type="submit"
+                  className="btn btn-primary btn-lg bg-red-800 rounded-2xl text-white"
+                >
+                  Login
+                </button>
+                <p className="small fw-bold mt-2 pt-1 mb-0">
+                  Don't have an account?{" "}
+                  <button
+                    type="submit"
+                    style={{ padding: "0rem 2rem" }}
+                    className="btn btn-primary btn-lg"
+                    onClick={() => {
+                      Navigate("/login/register");
+                    }}
+                  >
+                    Register
+                  </button>
+                </p>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Login;
+export default Index;
