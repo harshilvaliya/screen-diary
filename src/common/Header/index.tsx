@@ -15,6 +15,7 @@ import { maxWidth, textColor } from "@/styles";
 import { navLinks } from "@/constants";
 import { THROTTLE_DELAY } from "@/utils/config";
 import { cn } from "@/utils/helper";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { openMenu, theme, showThemeOptions } = useTheme();
@@ -111,6 +112,11 @@ const Header = () => {
               {showThemeOptions && <ThemeMenu />}
             </AnimatePresence>
           </div> */}
+          <Link to="/login">
+            <div className="">
+              <button className="bg-red-600 p-3 rounded-md">Sign In</button>
+            </div>
+          </Link>
         </div>
 
         <button
