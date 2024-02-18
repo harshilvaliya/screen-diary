@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FormEvent } from 'react';
 import { Link } from "react-router-dom";
 
-import "./register.css";
+// import "./register.css";
 
 import { useNavigate } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
@@ -50,17 +50,17 @@ const Register = () => {
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-md-9 col-lg-6 col-xl-5">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-              className="img-fluid"
-              alt="Sample image"
+              src="../../../public/Images/bgg.jpg"
+              className="img-fluid absolute"
+              alt="Sample"
             />
           </div>
-          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <form className="register" onSubmit={Register}>
+          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 relative justify-center flex items-center h-screen">
+            <form className="register bg-white bg-opacity-70 p-8 rounded-xl" onSubmit={Register}>
               {/* {console.log("User", user)} */}
               <div className="form-outline mb-4">
                 <input
-                  className="form-control form-control-lg"
+                  className="form-control form-control-lg rounded-lg px-2 text-lg w-full"
                   type="text"
                   name="name"
                   value={user.name}
@@ -70,7 +70,7 @@ const Register = () => {
               </div>
               <div className="form-outline mb-4">
                 <input
-                  className="form-control form-control-lg"
+                  className="form-control form-control-lg rounded-lg px-2 text-lg w-full"
                   type="text"
                   name="email"
                   value={user.email}
@@ -80,7 +80,7 @@ const Register = () => {
               </div>
               <div className="form-outline mb-4">
                 <input
-                  className="form-control form-control-lg"
+                  className="form-control form-control-lg rounded-lg px-2 text-lg w-full"
                   type="password"
                   name="password"
                   value={user.password}
@@ -90,7 +90,7 @@ const Register = () => {
               </div>
               <div className="form-outline mb-4">
                 <input
-                  className="form-control form-control-lg"
+                  className="form-control form-control-lg rounded-lg px-2 text-lg w-full"
                   type="password"
                   name="reEnterPassword"
                   value={user.reEnterPassword}
@@ -103,7 +103,7 @@ const Register = () => {
                 <button
                   style={{ padding: "0rem 2rem" }}
                   type="submit"
-                  className="btn btn-primary btn-lg"
+                  className="btn btn-primary btn-lg bg-red-800 rounded-2xl text-white"
                   onClick={Register}
                 >
                   Register
