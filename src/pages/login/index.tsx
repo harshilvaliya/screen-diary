@@ -21,7 +21,7 @@ const Index = ({ setLoginUser }) => {
 
   const login = async (event: FormEvent) => {
     event.preventDefault();
-    const res = await fetch("http://localhost:5173/login", {
+    const res = await fetch("http://localhost:5000/login", {
       method: "POST",
       body: JSON.stringify(user),
       headers: { "Content-Type": "application/json" },
@@ -29,9 +29,7 @@ const Index = ({ setLoginUser }) => {
     const data1 = await res.json();
     alert(data1.message);
 
-    if (data1.success) {
-      Navigate("/");
-    }
+    if (data1.success) Navigate("/", { state: { name: data1.user.name } });
   };
 
   return (

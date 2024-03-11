@@ -30,7 +30,7 @@ const Register = () => {
     e.preventDefault();
     const { name, email, password, reEnterPassword } = user;
     if (name && email && password && password === reEnterPassword) {
-      const res = await fetch("http://localhost:5173/register", {
+      const res = await fetch("http://localhost:5000/register", {
         method: "POST",
         body: JSON.stringify(user),
         headers: { "Content-Type": "application/json" },
@@ -38,7 +38,8 @@ const Register = () => {
       const data1 = await res.json();
       // console.log(data);
       alert(data1.message);
-      if (data1.success) Navigate("/");
+      if (data1.success) Navigate("/", { state: { name: data1.user.name } });
+
       // history.push("/login");
     } else {
       alert("Invlid input");
