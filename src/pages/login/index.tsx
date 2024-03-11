@@ -21,7 +21,7 @@ const Index = ({ setLoginUser }) => {
 
   const login = async (event: FormEvent) => {
     event.preventDefault();
-    const res = await fetch("http://localhost:5000/login", {
+    const res = await fetch("http://localhost:5173/login", {
       method: "POST",
       body: JSON.stringify(user),
       headers: { "Content-Type": "application/json" },

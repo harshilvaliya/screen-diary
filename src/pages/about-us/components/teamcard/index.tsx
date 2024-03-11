@@ -23,15 +23,15 @@ function TeamCard({
   insta,
 }: Props) {
   return (
-    <section className="px-2 py-4 mt-16 flex flex-col justify-center items-center text-center h-80 bg-rose-500 rounded-2xl shadow-xl group hover:-translate-y-5 transition-all duration-300">
+    <section className="px-2 border-2  py-4 mt-16 flex flex-col justify-center items-center text-center h-80 bg-red-600 hover:bg-slate-300 hover:border-slate-500 rounded-2xl shadow-xl group hover:-translate-y-5 transition-all duration-300">
       <img
-        className="inline-flex object-cover border-4 border-red-200 dark:border-green-800 rounded-full  h-24 w-24 group-hover:scale-110 duration-300"
+        className="inline-flex object-cover border-2 border-red-200 dark:border-black rounded-full  h-24 w-24 group-hover:scale-110 duration-300"
         src={profile}
         alt={"▼・ᴥ・▼"}
         height={96}
         width={96}
       ></img>
-      <p className="text-2xl font-medium pt-4">{fullname}</p>
+      <p className="text-2xl text-black  font-semibold pt-4">{fullname}</p>
       <p className="text-lg font-normal">{position}</p>
       <p className="text-sm">{email}</p>
       <ul className="flex flex-row mt-2">

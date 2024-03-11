@@ -25,7 +25,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const App = () => {
   const navigate = useNavigate();
   const [isLoginPage, setIsLoginPage] = useState(false);
-const [user, setLoginUser] = useState({});
+  const [user, setLoginUser] = useState({});
   useEffect(() => {
     setIsLoginPage(window.location.pathname === "/login");
   }, []);

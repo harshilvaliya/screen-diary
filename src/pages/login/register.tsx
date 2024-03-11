@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import "./Login";
-import { FormEvent } from 'react';
+import { FormEvent } from "react";
 import { Link } from "react-router-dom";
 
 // import "./register.css";
@@ -30,7 +30,7 @@ const Register = () => {
     e.preventDefault();
     const { name, email, password, reEnterPassword } = user;
     if (name && email && password && password === reEnterPassword) {
-      const res = await fetch("http://localhost:5000/register", {
+      const res = await fetch("http://localhost:5173/register", {
         method: "POST",
         body: JSON.stringify(user),
         headers: { "Content-Type": "application/json" },
@@ -56,7 +56,10 @@ const Register = () => {
             />
           </div>
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 relative justify-center flex items-center h-screen">
-            <form className="register bg-white bg-opacity-70 p-8 rounded-xl" onSubmit={Register}>
+            <form
+              className="register bg-white bg-opacity-70 p-8 rounded-xl"
+              onSubmit={Register}
+            >
               {/* {console.log("User", user)} */}
               <div className="form-outline mb-4">
                 <input
@@ -99,22 +102,21 @@ const Register = () => {
                 ></input>
               </div>
               <div className="text-center text-lg-start mt-4 pt-2">
-                <Link to='/login/register'>
-                <button
-                  style={{ padding: "0rem 2rem" }}
-                  type="submit"
-                  className="btn btn-primary btn-lg bg-red-800 rounded-2xl text-white"
-                  onClick={Register}
-                >
-                  Register
-                </button>
+                <Link to="/login/register">
+                  <button
+                    style={{ padding: "0rem 2rem" }}
+                    type="submit"
+                    className="btn btn-primary btn-lg bg-red-800 rounded-2xl text-white"
+                    onClick={Register}
+                  >
+                    Register
+                  </button>
                 </Link>
                 <p className="small fw-bold mt-2 pt-1 mb-0">
                   Already register?{" "}
                   <button
                     style={{ padding: "0rem 2rem" }}
                     className="btn btn-primary btn-lg"
-                 
                   >
                     Sign in
                   </button>

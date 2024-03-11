@@ -9,6 +9,7 @@ import { useGetShowQuery } from "@/services/TMDB";
 import { useMotion } from "@/hooks/useMotion";
 import { mainHeading, maxWidth, paragraph } from "@/styles";
 import { cn } from "@/utils/helper";
+import Review from "./components/review";
 
 const Detail = () => {
   const { category, id } = useParams();
@@ -123,6 +124,8 @@ const Detail = () => {
         id={Number(id)}
         showSimilarShows
       />
+      {/* //review section */}
+      <Review />
     </>
   );
 };
