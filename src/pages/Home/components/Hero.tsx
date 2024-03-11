@@ -10,7 +10,7 @@ const Hero = ({ movies }: { movies: IMovie[] }) => (
     loop={true}
     slidesPerView={1}
     autoplay={{
-      delay: 2000,
+      delay: 5000,
       disableOnInteraction: false,
     }}
     modules={[Autoplay]}

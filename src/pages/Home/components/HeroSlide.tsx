@@ -43,20 +43,16 @@ const HeroSlide = ({ movie }: { movie: IMovie }) => {
         animate="show"
         className="text-gray-300 sm:max-w-[80vw] max-w-[90vw]  md:max-w-[420px] font-nunito flex flex-col sm:gap-5 xs:gap-3 gap-[10px] sm:mb-8"
       >
-        <m.h2  className={cn(mainHeading)}>
-          {title}
-        </m.h2>
-        <m.p  className={paragraph}>
+        <m.h2 className={cn(mainHeading)}>{title}</m.h2>
+        <m.p className={paragraph}>
           {overview.length > 180 ? `${overview.slice(0, 180)}...` : overview}
         </m.p>
-        <m.div
-          className="flex flex-row items-center gap-4 sm:mt-6 xs:mt-5 mt-[18px] "
-        >
+        <m.div className="flex flex-row items-center gap-4 sm:mt-6 xs:mt-5 mt-[18px] ">
           <button
             type="button"
             name="watch-trailer"
             className={cn(watchBtn, `text-shadow watch-trailer`)}
-            // onClick={showTrailer}
+            onClick={showTrailer}
           >
             Watch trailer
           </button>
@@ -68,9 +64,9 @@ const HeroSlide = ({ movie }: { movie: IMovie }) => {
               ` bg-[#ff0000] shadow-glow
              text-shadow text-secColor `
             )}
-            // onClick={handleWatchNow}
+            onClick={handleWatchNow}
           >
-            Watch now
+            More Info
           </button>
         </m.div>
       </m.div>

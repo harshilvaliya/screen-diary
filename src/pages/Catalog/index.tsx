@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 
-
 import { MovieCard, SkelatonLoader } from "@/common";
 import { CatalogHeader, Search } from "./components";
 import { useGetShowsQuery } from "@/services/TMDB";
@@ -47,15 +46,12 @@ const Catalog = () => {
     <>
       <CatalogHeader category={String(category)} />
       <section className={`${smallMaxWidth} `}>
-        <Search setQuery={setQuery}/>
+        <Search setQuery={setQuery} />
 
         {isLoading || isCategoryChanged ? (
           <SkelatonLoader isMoviesSliderLoader={false} />
         ) : (
-          <div
-          
-            className="flex flex-wrap xs:gap-4 gap-[14px] justify-center"
-          >
+          <div className="flex flex-wrap xs:gap-4 gap-[14px] justify-center">
             {shows?.map((movie) => (
               <div
                 key={movie.id}
@@ -74,7 +70,7 @@ const Catalog = () => {
           />
         ) : (
           <div className="w-full flex items-center justify-center">
-            {/* <button
+            <button
               type="button"
               onClick={() => {
                 setPage(page + 1);
@@ -83,7 +79,7 @@ const Catalog = () => {
               className="sm:py-2 xs:py-[6px] py-1 sm:px-4 xs:px-3 px-[10.75px] bg-[#ff0000] text-gray-50 rounded-full md:text-[15.25px] sm:text-[14.75px] xs:text-[14px] text-[12.75px] shadow-md hover:-translate-y-1 transition-all duration-300 font-medium font-nunito lg:my-8 my-7"
             >
               Load more
-            </button> */}
+            </button>
           </div>
         )}
       </section>

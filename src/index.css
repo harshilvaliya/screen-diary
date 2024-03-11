@@ -20,7 +20,13 @@ body {
 body {
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
-  overflow-y: scroll
+
+  overflow-y: scroll;
+
+  ::selection {
+    color: black;
+    background-color: white;
+  }
 }
 
 .no-scroll {

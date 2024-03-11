@@ -21,14 +21,13 @@ const Index = ({ setLoginUser }) => {
 
   const login = async (event: FormEvent) => {
     event.preventDefault();
-    const res = await fetch("http://localhost:5000/login", {
+    const res = await fetch("http://localhost:5173/login", {
       method: "POST",
       body: JSON.stringify(user),
       headers: { "Content-Type": "application/json" },
     });
     const data1 = await res.json();
     alert(data1.message);
-    
 
     if (data1.success) {
       Navigate("/");
@@ -46,13 +45,16 @@ const Index = ({ setLoginUser }) => {
               alt="Sample"
             />
           </div>
-        <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 relative justify-center flex items-center h-screen">
-            <form className="login bg-white bg-opacity-70 p-8 rounded-xl" onSubmit={login}>
+          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1 relative justify-center flex items-center h-screen">
+            <form
+              className="login bg-white bg-opacity-70 p-8 rounded-xl"
+              onSubmit={login}
+            >
               {/* {console.log("User", user)} */}
 
               <div className="form-outline mb-4">
                 <input
-                  className="form-control form-control-lg rounded-lg px-2 text-xl w-full"
+                  className="form-control form-control-lg rounded-lg px-2 text-lg w-full"
                   type="text"
                   name="email"
                   value={user.email}
@@ -62,7 +64,7 @@ const Index = ({ setLoginUser }) => {
               </div>
               <div className="form-outline mb-4">
                 <input
-                  className="form-control form-control-lg rounded-lg px-2 text-xl w-full"
+                  className="form-control form-control-lg rounded-lg px-2 text-lg w-full"
                   type="password"
                   name="password"
                   value={user.password}
@@ -81,7 +83,10 @@ const Index = ({ setLoginUser }) => {
                     value=""
                     id="form2Example3"
                   />
-                  <label className="form-check-label text-sm" htmlFor="form2Example3">
+                  <label
+                    className="form-check-label text-sm"
+                    htmlFor="form2Example3"
+                  >
                     Remember me
                   </label>
                 </div>
