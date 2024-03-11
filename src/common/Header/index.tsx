@@ -16,6 +16,9 @@ import { navLinks } from "@/constants";
 import { THROTTLE_DELAY } from "@/utils/config";
 import { cn } from "@/utils/helper";
 import { Link } from "react-router-dom";
+// import { SparklesCore } from "@/components/paricles";
+
+import { useParams } from "react-router-dom";
 
 const Header = () => {
   const { openMenu, theme, showThemeOptions } = useTheme();
@@ -24,7 +27,7 @@ const Header = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isNotFoundPage, setIsNotFoundPage] = useState<boolean>(false);
   const location = useLocation();
-
+  const { name } = location.state;
   useEffect(() => {
     const handleBackgroundChange = () => {
       const body = document.body;
@@ -58,7 +61,7 @@ const Header = () => {
       setIsNotFoundPage(false);
     }
   }, [location.pathname]);
-
+  // console.log(name);
   return (
     <header
       className={cn(
@@ -66,6 +69,15 @@ const Header = () => {
         isActive && (theme === "Dark" ? "header-bg--dark" : "header-bg--light")
       )}
     >
+      {/* <SparklesCore
+        id="tsparticlesfullpage"
+        background="transparent"
+        minSize={0.6}
+        maxSize={1.4}
+        particleDensity={100}
+        className="w-full h-72"
+        particleColor="#FFFFFF"
+      /> */}
       <nav
         className={cn(maxWidth, `flex justify-between flex-row items-center`)}
       >
@@ -92,7 +104,6 @@ const Header = () => {
               );
             })}
           </ul>
-
           {/* <div className="button relative">
             <button
               name="theme-menu"
@@ -112,11 +123,18 @@ const Header = () => {
               {showThemeOptions && <ThemeMenu />}
             </AnimatePresence>
           </div> */}
-          <Link to="/login">
+
+          {name ? (
             <div className="">
-              <button className="bg-red-600 p-3 rounded-md">Sign In</button>
+              <button className="bg-red-600 p-3 rounded-md">logged in</button>
             </div>
-          </Link>
+          ) : (
+            <Link to="/login">
+              <div className="">
+                <button className="bg-red-600 p-3 rounded-md">Sign In</button>
+              </div>
+            </Link>
+          )}
         </div>
 
         <button
